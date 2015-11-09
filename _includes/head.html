@@ -1,17 +1,20 @@
 <html>
 <head>
+	{% if site.enforce_ssl %}
+		<script type="text/javascript">
+			var enforce = "{{ site.enforce_ssl }}";
+			if ((enforce == window.location.host) && (window.location.protocol != "https:"))
+				window.location = window.location.toString().replace(/^http:/, "https:");
+		</script>
+	{% endif %}
+	
     <title>instalock.co</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	
-	<script type="text/javascript">
-		var host = "instalock.co";
-		if ((host == window.location.host) && (window.location.protocol != "https:"))
-			window.location.protocol = "https";
-	</script>
-	
+	<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
 </head>
 <body>
     <div class="row" style="margin-left: 0px; margin-right: 0px">
