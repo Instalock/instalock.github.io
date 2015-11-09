@@ -3,4 +3,4 @@ markdown: redcarpet
 pygments: true
 baseurl: /
 url: https://instalock.co
-enforce_ssl: instalock.github.io
+enforce_ssl: instalock.co
